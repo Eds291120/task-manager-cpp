@@ -57,11 +57,32 @@ void exibirMenu() {
 void addTarefa(vector<Tarefas>& Lista) {    
     Tarefas novaTarefa;
     novaTarefa.id = Lista.size() + 1;
-    novaTarefa.status, "Não iniciada";
+    novaTarefa.status = "Não iniciada";
     cout << "Digite a descrição da tarefa: ";
     getline(cin, novaTarefa.descricao);
     Lista.push_back(novaTarefa);
     cout << "Tarefa adicionada com sucesso.\n";
+    
+    int optionadd;
+    do {
+    cout << "1. Adicionar outra Task" << '\n';
+    cout << "2. Listar Tasks" << '\n';
+    cout << "3. Voltar ao menu inicial" << '\n';
+    cin >> optionadd;
+    cin.ignore();
+    switch (optionadd) {
+        case 1:
+            addTarefa(Lista);
+            break;
+        case 2:
+            listTarefas(Lista);
+            break;
+        case 3:
+            break;
+        default:
+            cout << "Opção inválida, tente novamente." << '\n';
+    }
+} while (optionadd !=3);
 }
 
 void listTarefas(vector<Tarefas>& lista) {
