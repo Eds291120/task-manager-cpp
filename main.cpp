@@ -17,7 +17,6 @@ void listTarefas(vector<Tarefas>& lista);
 vector<Tarefas> Lista;
 
 int main() {
-    exibirMenu();
     int opcao = 0; 
 
     cout << "Bem-vindo ao Task Manager!" << '\n';
@@ -55,11 +54,14 @@ void exibirMenu() {
     cout << "" <<'\n';
 }
 
-void addTarefa() {
+void addTarefa(vector<Tarefas>& Lista) {    
+    Tarefas novaTarefa;
+    novaTarefa.id = Lista.size() + 1;
+    novaTarefa.status, "Não iniciada";
     cout << "Digite a descrição da tarefa: ";
-    Tarefas novaTarefa = {Lista.size() + 1, novaTarefa.descricao, "Não iniciada"};
     getline(cin, novaTarefa.descricao);
     Lista.push_back(novaTarefa);
+    cout << "Tarefa adicionada com sucesso.\n";
 }
 
 void listTarefas(vector<Tarefas>& lista) {
