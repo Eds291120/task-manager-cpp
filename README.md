@@ -9,3 +9,5 @@ Gerenciador de tarefas em cpp
 - [x] adicionar novas tarefas sem entrar no codigo
 - [ ] automatizar processo de compilação
 - [ ] cancelar a adição de tarefa durante a adição de tarefa
+- [ ] trocar o status de string pra int
+- [ ] adicionar a atualização do status da tarefa
